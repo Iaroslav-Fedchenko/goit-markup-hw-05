@@ -723,7 +723,7 @@ body {
 .text-modal {
   font-weight: 500;
   font-size: 16px;
-  padding-top: 48px;
+  /* padding-top: 48px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
@@ -754,7 +754,7 @@ body {
 .input-wrapper svg {
   position: absolute;
   left: 16px;
-  top: 11px;
+  /* top: 11px; */
 }
 
 .form-checkmark .svg-icon {
@@ -764,7 +764,7 @@ body {
   position: absolute;
   left: 16px;
   top: 50%;
-  transform: rotateY(-50%);
+  transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -794,7 +794,7 @@ body {
   outline: transparent;
   padding-left: 38px;
   background-color: transparent;
-  transition: border-color cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-list:hover {
   border-color: #4d5ae5;
@@ -804,7 +804,7 @@ body {
 }
 
 .div-textarea {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .textarea-list::placeholder {
@@ -825,21 +825,21 @@ body {
   outline: none;
   border: 1px solid rgba(46, 47, 66, 0.4);
   margin-bottom: 16px;
-  font-size: 12;
+  font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
   background-color: transparent;
-  padding: 8px 16px;
+  /* padding: 8px 16px; */
   outline: transparent;
   resize: none;
-  transition: border-color cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .textarea-list:focus {
   border-color: #4d5ae5;
 }
 .checkboxx {
-  padding-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .checkboxx label {
@@ -850,10 +850,12 @@ body {
 
 .checkboxx input:checked ~ .form-checkmark {
   background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkboxx input:checked ~ .svg-icon {
+.checkboxx input:checked + .svg-icon {
   fill: #ffffff;
 }
 
@@ -863,7 +865,14 @@ body {
   height: 16px;
   width: 16px;
   background-color: #ffffff;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: transparent;
+}
+.accent {
+  color: #4d5ae5;
 }
