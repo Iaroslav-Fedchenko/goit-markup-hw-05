@@ -757,13 +757,16 @@ body {
   /* top: 11px; */
 }
 
-.form-checkmark .svg-icon {
+/* .custom-checkbox .svg-icon {
   fill: #f4f4fd;
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
+} */
+.checkbox-icon {
+  fill: transparent;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .svg-icon {
   position: absolute;
   /* left: 16px; */
@@ -781,8 +784,14 @@ body {
   gap: 24px;
 }
 
-.list-modal {
-  display: block;
+.checkbox-label {
+  /*  */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  /*  */
+
   font-weight: 400;
   font-size: 12px;
   color: #8e8f99;
@@ -847,44 +856,46 @@ body {
   border-color: #4d5ae5;
 }
 
-.checkboxx {
+.checkbox-container {
   margin-bottom: 24px;
 }
 
-.checkboxx label {
+.checkbox-container label {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.checkboxx input:checked + label .form-checkmark {
+.checkbox-container input:checked + label .custom-checkbox {
   background-color: #404bbf;
   border: none;
+  /* fill: #f4f4fd;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.checkbox-container input:checked + .checkbox-label .checkbox-icon {
   fill: #f4f4fd;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkboxx input:checked + label .form-checkmark .svg-icon {
-  opacity: 1;
-}
+.custom-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-.form-checkmark {
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   height: 16px;
   width: 16px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: transparent;
-  margin-right: 8px;
   background-color: transparent;
-  position: relative;
+  /* position: relative;
+fill: transparent;
+  margin-right: 8px; */
 }
-
-.accent {
+.privacy-link {
   color: #4d5ae5;
+  text-decoration: underline;
 }
